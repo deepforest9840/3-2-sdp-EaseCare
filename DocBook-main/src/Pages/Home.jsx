@@ -31,7 +31,7 @@ const Home = () => {
                   We help patients live a healthy, longer life.
                 </h1>
                 <Link to="/doctors">
-                  <button className="bg-blue-500 text-white py-3 px-8 mt-4 rounded-lg shadow-lg hover:bg-blue-600 transition duration-300 ease-in-out transform hover:scale-105">
+                  <button className="bg-[#00A9E0] text-white py-3 px-8 mt-4 rounded-lg shadow-lg hover:bg-blue-600 transition duration-300 ease-in-out transform hover:scale-105">
                     Request an Appointment
                   </button>
                 </Link>

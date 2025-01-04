@@ -13,7 +13,7 @@ const Doctors = () => {
       try {
         const response = await fetch('http://localhost:9191/api/v1/doctors/all'); // Correct endpoint
         const data = await response.json();
-        
+
         if (data.message === 'success') {
           // Map over the fetched data and format it
           const formattedData = data.data.map(doctor => ({
@@ -49,7 +49,7 @@ const Doctors = () => {
   }
 
   return (
-    <div className="container mx-auto p-6">
+    <div className="bg-gradient-to-r from-teal-50 via-teal-50 to-teal-100 min-h-screen flex items-center justify-center p-4">
       <h1 className="text-3xl font-bold text-center text-blue-600 mb-6">Meet Our Doctors</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {doctorsData.map(doctor => (

@@ -5,7 +5,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-teal-600 p-4 shadow-md">
+    <nav className="bg-teal-700 p-4 shadow-md">
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo */}
         <Link to="/" className="text-white text-2xl font-bold">
@@ -22,9 +22,8 @@ const Navbar = () => {
 
         {/* Links */}
         <div
-          className={`lg:flex lg:items-center lg:space-x-6 ${
-            isOpen ? 'block' : 'hidden'
-          }`}
+          className={`lg:flex lg:items-center lg:space-x-6 ${isOpen ? 'block' : 'hidden'
+            }`}
         >
           <Link to="/" className="block mt-2 lg:mt-0 text-white hover:text-teal-100">
             Home
@@ -35,6 +34,10 @@ const Navbar = () => {
           <Link to="/apply" className="block mt-2 lg:mt-0 text-white hover:text-teal-100">
             Apply for Doctor
           </Link>
+          <Link to="/appointments" className="block mt-2 lg:mt-0 text-white hover:text-teal-100">
+            Appointments
+          </Link>
+
           <Link to="/contact" className="block mt-2 lg:mt-0 text-white hover:text-teal-100">
             Contact Us
           </Link>
