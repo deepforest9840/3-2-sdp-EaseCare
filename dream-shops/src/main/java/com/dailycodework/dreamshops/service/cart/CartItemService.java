@@ -21,7 +21,7 @@ public class CartItemService  implements ICartItemService{
     private final ICartService cartService;
 
     @Override
-    public void addItemToCart(Long cartId, Long doctorId, int quantity) {
+    public void addItemToCart(Long cartId, Long doctorId, int numberOfPerson) {
         //1. Get the cart
         //2. Get the doctor
         //3. Check if the doctor already in the cart
@@ -36,11 +36,11 @@ public class CartItemService  implements ICartItemService{
         if (cartItem.getId() == null) {
             cartItem.setCart(cart);
             cartItem.setDoctor(doctor);
-            cartItem.setQuantity(quantity);
+            cartItem.setNumberOfPerson(numberOfPerson);
             cartItem.setUnitPrice(doctor.getPrice());
         }
         else {
-            cartItem.setQuantity(cartItem.getQuantity() + quantity);
+            cartItem.setNumberOfPerson(cartItem.getNumberOfPerson() + numberOfPerson);
         }
         cartItem.setTotalPrice();
         cart.addItem(cartItem);
@@ -57,14 +57,14 @@ public class CartItemService  implements ICartItemService{
     }
 
     @Override
-    public void updateItemQuantity(Long cartId, Long doctorId, int quantity) {
+    public void updateItemQuantity(Long cartId, Long doctorId, int numberOfPerson) {
         Cart cart = cartService.getCart(cartId);
         cart.getItems()
                 .stream()
                 .filter(item -> item.getDoctor().getId().equals(doctorId))
                 .findFirst()
                 .ifPresent(item -> {
-                    item.setQuantity(quantity);
+                    item.setNumberOfPerson(numberOfPerson);
                     item.setUnitPrice(item.getDoctor().getPrice());
                     item.setTotalPrice();
                 });
