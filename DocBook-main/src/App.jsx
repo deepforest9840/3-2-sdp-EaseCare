@@ -3,12 +3,14 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './Components/Navbar';
 import Footer from './Components/Footer';
+import AppointmentBookingCart from './Components/AppointmentBookingCart';
 import Home from './Pages/Home';
 import Doctors from './Pages/Doctors';
 import ApplyDoctorForm from './Pages/ApplyDoctorForm';
 import YourAppointments from './Pages/YourAppointments';
 import ContactUs from './Pages/ContactUs';
-
+import SignUp from './Pages/SignUp';
+import UserProfile from './Pages/UserProfile';
 function App() {
   return (
     <Router>
@@ -21,7 +23,9 @@ function App() {
             <Route path="/apply" element={<ApplyDoctorForm />} />
             <Route path="/appointments" element={<YourAppointments />} />
             <Route path="/contact" element={<ContactUs />} />
-
+            <Route path="/signup" element={<SignUp />} />
+            <Route path="/profile" element={<UserProfile />} />
+            
 
           </Routes>
         </main>
