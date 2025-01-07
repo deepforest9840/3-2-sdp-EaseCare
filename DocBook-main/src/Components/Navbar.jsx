@@ -50,7 +50,12 @@ const Navbar = () => {
           >
             Appointments
           </Link>
-
+          <Link
+            to="/store"
+            className="block mt-2 lg:mt-0 text-white hover:text-teal-100"
+          >
+            Store
+          </Link>
           <Link
             to="/contact"
             className="block mt-2 lg:mt-0 text-white hover:text-teal-100"
